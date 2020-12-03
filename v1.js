@@ -19,50 +19,56 @@ for (let index = 0; index < numberCards; index++) {
         p.appendChild(c)
 }
 
-function flip(event){
-    if(!this.classList.contains('found'))
-        openCard(this)  
+function flipp(event){
+        openCard(this)
 }
-
-
 function openCard(c){
-    if(openedCards.length<2){
-        c.classList.toggle('flip')
-        openedCards.push(c)
-        if(openedCards.length==2){
-            if(openedCards[0].type == openedCards[1].type){
-                Score += 1
-                document.querySelector('#Score').textContent = `Score: ${Score}`;
-                window.setTimeout(
-                ()=>{
-                    openedCards.pop().classList.toggle('found')
-                    openedCards.pop().classList.toggle('found')
-                },
-                500    
-            )
 
-            }
-            else{             
+   if(openedCards.length<2){
+        c.classList.toggle('flipped')
+        openedCards.push(c)
+        if(openedCards.length == 2){
+            if(openedCards[0].type == openedCards[1].type){
                 window.setTimeout(
                     ()=>{
-                        openedCards.pop().classList.toggle('flip')
-                        openedCards.pop().classList.toggle('flip')
+                        openedCards.pop().classList.toggle('found')
+                        openedCards.pop().classList.toggle('found')
+                        counter += 1
+                        
+                        
+                        if (counter == 8 ) {
+                            alert("Du hast das Memory abgeschlossen")
+                            location.reload();
+                            
+                        }
+
                     },
-                    1500
+                    1000
                 )
-                
+            
+            }
+            else{
+                window.setTimeout(
+                    ()=>{
+                        openedCards.pop().classList.toggle('flipped')
+                        openedCards.pop().classList.toggle('flipped')
+                    },
+                    1000
+                )
             }
         }
-    }
+
+   }
 }
+
 function shuffle(arra1) {
     var ctr = arra1.length, temp, index;
     while (ctr > 0) {
-        index = Math.floor(Math.random() * ctr)
-        ctr--
-        temp = arra1[ctr]
-        arra1[ctr] = arra1[index]
-        arra1[index] = temp
+        index = Math.floor(Math.random() * ctr);
+        ctr--;
+        temp = arra1[ctr];
+        arra1[ctr] = arra1[index];
+        arra1[index] = temp;
     }
     return arra1;
 }

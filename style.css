@@ -1,11 +1,12 @@
 body{
     background-color: rgb(97, 128, 126);
     font-family: monospace;
+    font-size: 30px;
 }
 .container{
   display: flex;
   justify-content: center;
-  margin-top: 15%;   
+  margin-top: 10%;   
 }
 .deck{
   width: 700px;
