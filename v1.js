@@ -4,6 +4,13 @@ let cardTypes=[]
 
 let counter = 0;
 
+let pw = document.querySelector("#pw")
+pw.innerHTML = "ja";
+
+//const password;
+
+
+
 for (let index = 0; index < numberCards/2; index++) {
     cardTypes.push(index+1)
     cardTypes.push(index+1)

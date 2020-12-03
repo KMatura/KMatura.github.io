@@ -3,6 +3,40 @@ body{
     font-family: monospace;
     font-size: 30px;
 }
+
+
+
+.clusername{
+  height:30px;
+  width: 100%;
+}
+.login{
+  display:flex;
+  width:20%;
+  margin-left: 40%;
+  margin-top:10%;
+}
+.uname{
+  height:15%;
+}
+.pass{
+  margin-top:20%;
+}
+.pw{
+  margin-top:20%;
+  padding-top:4%;
+  padding-left:100%;
+  background-color:red;
+  animation: colorchange 0.5s linear 1s infinite; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 60ms linear 0s infinite alternate; /* Chrome and Safari */
+}
+@keyframes colorchange{
+  0%{background:red;}
+  100%{background:darkred;}
+}
+
+
 .container{
   display: flex;
   justify-content: center;
